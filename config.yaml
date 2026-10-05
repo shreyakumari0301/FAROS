@@ -1,0 +1,32 @@
+# FAROS Phase 0/1 — frozen CVRP200 + MnLP + branch bank
+
+problem:
+  name: CVRP
+  customers: 200
+
+policy:
+  name: mnlp
+  checkpoint: C:/Users/SK/LaRP/MnLP/checkpoints/cvrp_mnlp.pt
+  mnlp_root: C:/Users/SK/LaRP/MnLP
+  data_path: C:/Users/SK/LaRP/MnLP/CVRP/data/vrp200_test_lkh.txt
+  top_k: 5
+  device: cpu
+  max_episodes: 128
+
+branch_generation:
+  top_k: 5
+  horizons: [1, 2, 4, 8]
+  n_instances: 5
+  start_episode: 0
+  step_stride: 1
+
+experiment:
+  seed: 1234
+  episode: 0
+
+paths:
+  outputs: outputs/
+  logs: outputs/logs/
+  checkpoints: outputs/checkpoints/
+  raw_data: data/raw/
+  processed_data: data/processed/

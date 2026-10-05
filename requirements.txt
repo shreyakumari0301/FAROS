@@ -1,0 +1,3 @@
+numpy>=1.24.0
+PyYAML>=6.0
+# torch>=2.0.0  # required from Phase 2 / MnLP wiring; optional in Phase 0
